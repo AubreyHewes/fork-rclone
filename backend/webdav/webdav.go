@@ -700,7 +700,7 @@ func (f *Fs) fetchAndSetBearerToken() error {
 }
 
 // The WebDAV url can optionally be suffixed with a path. This suffix needs to be ignored for determining the temporary upload directory of chunks.
-var nextCloudURLRegex = regexp.MustCompile(`^(.*)/dav/files/([^/]+)`)
+var nextCloudURLRegex = regexp.MustCompile(`^(.*)/((?:web)?dav)/files/([^/]+)`)
 
 // setQuirks adjusts the Fs for the vendor passed in
 func (f *Fs) setQuirks(ctx context.Context, vendor string) error {
